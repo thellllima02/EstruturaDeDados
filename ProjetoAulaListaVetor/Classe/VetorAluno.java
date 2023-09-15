@@ -1,6 +1,4 @@
-package ProjetoAulaListaVetor;
-
-import ProjetoAulaListaVetor.Classe.Aluno;
+package ProjetoAulaListaVetor.Classe;
 
 public class VetorAluno {
     private Aluno[] aluno = new Aluno[100];

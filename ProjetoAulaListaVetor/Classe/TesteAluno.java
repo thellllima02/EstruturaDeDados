@@ -1,7 +1,5 @@
 package ProjetoAulaListaVetor.Classe;
 
-import ProjetoAulaListaVetor.VetorAluno;
-
 public class TesteAluno {
      public static void main(String[] args) {
         
