@@ -35,6 +35,10 @@ public class VetorAluno {
         }
         this.totalDeAlunos--;    
     }
+    public void removerNoFinal(){
+        this.aluno[this.totalDeAlunos] = null;
+        this.totalDeAlunos --;
+     }
     public boolean contem(Aluno aluno){
        for(int i = 0; i < this.totalDeAlunos; i++){
            if(aluno.equals(this.aluno[i])){
@@ -123,5 +127,29 @@ public class VetorAluno {
         }
         return pos;
     }
-    
+    public void intercalação(VetorAluno L2){
+        if (this.totalDeAlunos > 0 && L2.totalDeAlunos > 0){
+            Aluno novaarray [] = new Aluno [(this.aluno.length + L2.aluno.length)];
+            int cont = 0;
+            int cont2 = 0;
+            for(int i = 0; i <this.totalDeAlunos*2; i=i+2){
+                    novaarray[i] = this.aluno[cont++];
+             }
+            for(int i = 1; i <L2.totalDeAlunos*2; i=i+2){
+               novaarray[i] = L2.aluno[cont2++]; 
+            }
+            this.totalDeAlunos += L2.totalDeAlunos;
+            this.aluno = novaarray;
+            for(int i=0; i<this.totalDeAlunos; i++){
+            if(this.aluno[i] == null){
+            this.aluno[i]=this.aluno[i+1];}
+            }
+        }
+        else if(this.totalDeAlunos == 0 & L2.totalDeAlunos >0){
+            for(int i = 0; i< L2.totalDeAlunos; i++){
+            this.aluno[i] = L2.aluno[i];
+            this.totalDeAlunos = L2.totalDeAlunos;
+            }
+        }
+    }
 }
